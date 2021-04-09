@@ -1,0 +1,421 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+}
+
+/* body grid layout */
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 5px 1fr 50px;
+	grid-template-areas: 'header''main''footer';
+	min-height: 100vh;
+}
+
+.header {
+	grid-area: header;
+	background-color: #F8F8F9;
+}
+
+.aside {
+	grid-area: aside;
+	background-color: #0B2A5A;
+}
+
+.main {
+	grid-area: main;
+	background-color: #F8F8F9;
+}
+
+.footer {
+	grid-area: footer;
+	background-color: whitesmoke;
+}
+
+/* flexing header and footer */
+.header,
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: darkblue;
+	padding: 0 15px;
+}
+
+
+/* flexing aside */
+.aside {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 260px;
+	position: fixed;
+	overflow-y: auto;
+	z-index: 2;
+	transform: translateX(-265px);
+}
+
+.aside.active {
+	transform: translateX(0);
+}
+
+.user-info {
+	margin-top: 30px;
+}
+
+.user-image {
+	width: 120px;
+	height: 120px;
+	border: 2px solid #FFFFFF;
+	border-radius: 50%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 25px;
+}
+
+.user-info h3,
+.user-info h5,
+.user-info p {
+	text-align: center;
+	margin: 0;
+}
+
+.user-info h3 {
+	margin: 10px auto;
+	color: #FFFFFF;
+}
+
+.user-info h5 {
+	color: #9A9ABE;
+	font-size: 14px;
+}
+
+.user-info p {
+	color: #9A9ABE;
+	font-size: 13px;
+	margin: 5px 10px;
+}
+
+.aside-list {
+	padding: 0;
+	margin-top: 20px;
+	list-style-type: none;
+
+}
+
+.list-item {
+	padding: 15px 0px 20px 20px;
+	color: #9A9ABE;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.list-item img {
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+.list-item:hover,
+.list-item.active {
+	color: #60D91A;
+	cursor: pointer;
+	border-left: 5px solid #60D91A;
+}
+
+/* layout for main content and cards */
+.main-overview {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.overview-card {
+	flex-basis: 230px;
+	flex-grow: 1;
+	margin: 20px 30px;
+	padding: 30px;
+	background-color: #6B00BC;
+	height: 60px;
+	border-radius: 10px;
+	color: #FFFFFF;
+}
+
+.overview-card-info {
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.overview-card-items {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 12px;
+}
+
+.overview-price-info {
+	font-size: 26px;
+	font-weight: 500;
+}
+
+.overview-card-icon {
+	font-size: 26px;
+}
+
+
+.overview-button {
+	flex-basis: 230px;
+	flex-grow: 1;
+	margin: 20px 30px;
+	padding: 10px 15px;
+	background-color: #E8ECF1;
+	border-radius: 50px;
+}
+
+.overview-button-text {
+	color: #728391;
+	text-transform: uppercase;
+	font-size: 15px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.overview-button:hover,
+.overview-button.active {
+	background: #0062FF;
+	box-shadow: 0px 10px 20px #0062FF4D;
+	color: #FFFFFF;
+}
+
+.overview-button-text:hover,
+.overview-button-text.active {
+	color: #FFFFFF;
+}
+
+/* layout for main cards section */
+.main-card {
+	width: 1120px - 260px;
+	height: 320px;
+	margin: 10px 20px;
+	padding: 20px;
+	box-shadow: 0px 5px 10px #01368619;
+	border-radius: 10px;
+	background: #FFFFFF;
+	margin-bottom: 30px;
+}
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/* mobile responsiveness */
+@media (min-width: 768px) {
+	.container {
+		width: 750px - 260px;
+	}
+}
+
+@media (min-width: 992px) {
+	.container {
+		width: 970px - 260px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px - 260px;
+	}
+}
+
+/* flexing cards */
+.row {
+	display: flex;
+	float: left;
+}
+
+.col-12 {
+	width: 100%;
+}
+
+.col-9 {
+	width: 74.65%
+}
+
+.col-8 {
+	width: 66.2%;
+}
+
+.col-6 {
+	width: 50%;
+}
+
+.col-4 {
+	width: 32.4%;
+}
+
+.col-3 {
+	width: 23.95%;
+}
+
+.col-2 {
+	width: 15.5%;
+}
+
+
+.card-image img {
+	width: 300px;
+	height: 240px;
+}
+
+.card-info {
+	margin-left: 60px;
+}
+
+.card-content p {
+	color: #728391;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+.card-content h2 {
+	color: #1000A9;
+	font-weight: 500;
+	font-size: 24px;
+	text-transform: capitalize;
+	margin-bottom: 10px;
+}
+
+.card-content span {
+	font-size: 14px;
+	color: #AAAABE;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
+}
+
+.card-overview-main {
+	width: 600px;
+	margin-top: 50px;
+}
+
+.card-overview {
+	margin-right: 90px;
+}
+
+.card-overview p {
+	letter-spacing: 1px;
+	color: #728391;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.card-overview span {
+	letter-spacing: 1px;
+	color: #1000A9;
+	font-size: 30px;
+	font-weight: 700;
+}
+
+.card-footer {
+	margin-top: 20px;
+	border-top: 5px solid #F8F8F9;
+	padding: 0;
+	width: 100%;
+}
+
+.card-button {
+	margin-top: 20px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 2.5px;
+	color: #0062FF;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.card-button:hover {
+	color: #1000A9;
+}
+
+.card-icons {
+	margin-top: 20px;
+	font-size: 20px;
+	color: #728391;
+	float: right;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.card-icons:last-child i {
+	margin-left: 20px;
+}
+
+.card-icons:hover {
+	color: #0062FF;
+}
+
+/* responsive layout */
+@media only screen and (min-width: 750px) {
+	.grid-container {
+		display: grid;
+		grid-template-columns: 260px 1fr;
+		grid-template-rows: 5px 1fr 50px;
+		grid-template-areas:
+			'aside header'
+			'aside main'
+			'aside footer';
+	}
+
+	.aside {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		transform: translateX(0);
+	}
+
+}
+
+.menu-icon {
+	position: fixed;
+	display: flex;
+	top: 2px;
+	left: 8px;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+	cursor: pointer;
+	padding: 12px;
+	color: black;
+}
+
+
+.aside-close-icon {
+	position: absolute;
+	visibility: visible;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+
+@media only screen and (min-width: 750px) {
+	.aside-close-icon {
+		display: none;
+	}
+}
