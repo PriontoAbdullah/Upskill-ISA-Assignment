@@ -222,25 +222,6 @@ body {
 	padding-right: 15px;
 }
 
-/* mobile responsiveness */
-@media (min-width: 768px) {
-	.container {
-		width: 750px - 260px;
-	}
-}
-
-@media (min-width: 992px) {
-	.container {
-		width: 970px - 260px;
-	}
-}
-
-@media (min-width: 1200px) {
-	.container {
-		width: 1170px - 260px;
-	}
-}
-
 /* flexing cards */
 .row {
 	display: flex;
@@ -417,5 +398,27 @@ body {
 @media only screen and (min-width: 750px) {
 	.aside-close-icon {
 		display: none;
+	}
+}
+
+/* mobile responsiveness */
+@media (min-width: 768px) {
+	.container {
+		width: 750px - 260px;
+	}
+	.main {
+		width: 100%;
+	}
+}
+
+@media (min-width: 992px) {
+	.container {
+		width: 970px - 260px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px - 260px;
 	}
 }
